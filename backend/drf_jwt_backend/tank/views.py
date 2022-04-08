@@ -20,7 +20,7 @@ def get_all_tanks(request):
 @permission_classes([IsAuthenticated])
 def user_tanks(request):
     print(
-        'User ', f"{request.user.id} {request.user.name}")
+        'User ', f"{request.user.id} {request.user.username}")
     if request.method == 'POST':
         serializer = TankSerializer(data=request.data)
         if serializer.is_valid():
