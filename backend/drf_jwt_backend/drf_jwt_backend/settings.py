@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
     'tank.apps.TankConfig'
+    'tank_mx_manager.apps.TankMxManagerConfig'
     #  'cars.apps.CarsConfig'  # This app is for example use only
 ]
 
