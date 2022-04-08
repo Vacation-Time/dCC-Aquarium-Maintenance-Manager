@@ -25,11 +25,11 @@ def user_mx_manager(request):
     if request.method == 'POST':
         serializer = MxManagerSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=request.user)
+            serializer.save(mxManagerId=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        mxManager = MxManager.objects.filter(user_id=request.user.id)
+        mxManager = MxManager.objects.filter(mxManagerId_id=request.user.id)
         serializer = MxManagerSerializer(mxManager, many=True)
         return Response(serializer.data)
 
