@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
-    'tank.apps.TankConfig'
-    'tank_mx_manager.apps.TankMxManagerConfig'
+    'tank',
+    'tank_mx_manager'
     #  'cars.apps.CarsConfig'  # This app is for example use only
 ]
 

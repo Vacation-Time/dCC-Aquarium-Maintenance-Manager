@@ -7,6 +7,6 @@ from .models import Tank
 class TankSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tank
-        fields = ['id', 'user_id', 'tank_name', 'water_type', 'tank_size',
-                  'fish_type', 'fish_amount', 'plant_type', 'plant_amount', 'tank_notes']
+        fields = ['id', 'user_id', 'tankName', 'waterType', 'tankSize',
+                  'fishType', 'fishAmount', 'plantType', 'plantAmount']
         depth = 1

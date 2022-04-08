@@ -7,6 +7,6 @@ from .models import MxManager
 class MxManagerSerializer(serializers.ModelSerializer):
     class Meta:
         model = MxManager
-        fields = ['id', 'mx_manager_id', 'food_schedule',
-                  'water_temp_check', 'water_change', 'plant_care', 'schedule_notes']
+        fields = ['id', 'mxManagerId', 'foodSchedule',
+                  'waterTempCheck', 'waterChange', 'plantCare', 'scheduleNotes']
         depth = 1
