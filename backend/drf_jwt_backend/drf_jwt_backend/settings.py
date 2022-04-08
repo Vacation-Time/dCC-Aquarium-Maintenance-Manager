@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
-    'cars.apps.CarsConfig'  # This app is for example use only
+    'tank.apps.TankConfig'
+    #  'cars.apps.CarsConfig'  # This app is for example use only
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,11 @@ TEMPLATES = [
         },
     },
 ]
+
+# added for int input return to be an int not a string #
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
 
 WSGI_APPLICATION = 'drf_jwt_backend.wsgi.application'
 
