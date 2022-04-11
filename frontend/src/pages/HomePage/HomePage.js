@@ -9,35 +9,34 @@ const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth(); 
-  const [cars, setCars] = useState([]);
+  const [tank, setTank] = useState([]);
   console.log(user); // { username: 'admin', firstName: 'Admin', id: 1 }
   console.log(token); // This is the JWT token that you will send in the header of any request requiring authentication
 
   useEffect(() => {
-    const fetchCars = async () => {
+    const fetchTank = async () => {
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", { // This is the URL of the API endpoint
+        let response = await axios.get("http://127.0.0.1:8000/api/tank/", { // This is the URL of the API endpoint
           headers: {
             Authorization: "Bearer " + token, // This is the JWT token that you will send in the header of any request requiring authentication
           },
         });
-        setCars(response.data);
+        setTank(response.data);
       } catch (error) {
         console.log(error.message);
       }
     };
-    fetchCars();
+    fetchTank();
   }, [token]);
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
-      <Link to={`/add-car`}>Add a car</Link>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
-          </p>
+      <h1>Home Page for (☞ﾟヮﾟ)☞ {user.username}</h1>
+      <h2>Current Tanks:</h2>    
+      {tank &&
+        tank.map((tank) => (
+          <p key={tank.id}><Link to={`/tank/${tank.id}`}>{tank.tankName}</Link></p>
         ))}
+        <Link to={`/add-tank`}>*Add a Tank*</Link>
     </div>
   );
 };
