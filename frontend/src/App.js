@@ -1,5 +1,6 @@
 // General Imports
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
 import "./App.css";
 
 // Pages Imports
@@ -7,6 +8,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddTankPage from "./pages/AddTankPage/AddTankPage";
+import TankManagerPage from "./pages/TankManagerPage/TankManagerPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -20,21 +22,22 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/" element={<PrivateRoute>
+          <HomePage />
+        </PrivateRoute>}>
+        
+          {/** Need a Route here that directs to the TankManagerPage with the selected tank id as a param */}
+        </Route>
+        <Route path="/tank/:tankId/" element={<TankManagerPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/add-tank" element={<PrivateRoute><AddTankPage/></PrivateRoute>} />
       </Routes>
       <Footer />
+      <Outlet/>
     </div>
+    
   );
+
 }
 
 export default App;

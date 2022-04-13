@@ -15,6 +15,7 @@ const Navbar = () => {
             <b>Aquarium Maintenance Manager</b>
           </Link>
         </li>
+        {/* <li><Link to="/">About</Link></li> */} 
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>
