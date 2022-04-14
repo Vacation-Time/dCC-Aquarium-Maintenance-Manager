@@ -9,4 +9,5 @@ urlpatterns = [
     path('api/auth/', include('authentication.urls')),
     path('api/tank/', include('authentication.urls')),
     path('tank/', views.user_tanks),
+    path('<int:pk>/', views.tank_detail)
 ]

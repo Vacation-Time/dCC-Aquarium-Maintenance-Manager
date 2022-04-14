@@ -13,12 +13,21 @@ const TankManagerPage = () => {
   console.log(user); // { username: 'admin', firstName: 'Admin', id: 1 }
   console.log(token); // This is the JWT token that you will send in the header of any request requiring authentication
 
+
   useEffect(() => {
-    const fetchManager = async () => {
+    const fetchManager = async (tank) => {
+
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/tank/", { // This is the URL of the API endpoint
+      const mxManagerId = () => {
+        const { id } = useParams();
+      }
+      
+        //TODO: use new tank_detail endpoint here
+       
+        
+        let response = await axios.get(`http://127.0.0.1:8000/api/tank/${tank.id}/`, { 
           headers: {
-            Authorization: "Bearer " + token, // This is the JWT token that you will send in the header of any request requiring authentication
+            Authorization: "Bearer " + token,
           },
         });
         console.log(response.data);
@@ -42,10 +51,7 @@ const TankManagerPage = () => {
         ))}
       </ul> 
       {/** This JSX will render the MxManager details*/} 
-     {/*  {tankManager &&
-        tankManager.map((manager) => (
-          <Link key={manager.id} to={`/src/pages/TankManagerPage/TankManagerPage.js${tankManager.id}`}/> 
-        ))} */}
+
     <Outlet />
     </div>
   );

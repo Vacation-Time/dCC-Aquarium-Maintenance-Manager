@@ -28,7 +28,7 @@ function App() {
         
           {/** Need a Route here that directs to the TankManagerPage with the selected tank id as a param */}
         </Route>
-        <Route path="/tank/:tankId/" element={<TankManagerPage />} />
+        <Route path="/tank/:tankId/" element={<TankManagerPage />} />.
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>

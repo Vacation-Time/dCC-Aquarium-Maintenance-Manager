@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from .models import Tank
 from .serializers import TankSerializer
+from django.shortcuts import get_object_or_404
 
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
@@ -32,5 +33,28 @@ def user_tanks(request):
         tank = Tank.objects.filter(user_id=request.user.id)
         serializer = TankSerializer(tank, many=True)
         return Response(serializer.data)
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def tank_detail(request, pk):
+    tank = get_object_or_404(Tank, pk=pk)
+    if request.method == 'GET':
+        serializer = TankSerializer(tank)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = TankSerializer(tank, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    elif request.method == 'DELETE':
+        tank.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# TODO: write a view function "tank_details"
+# this will take a primary key for the tank and get that specific tank
+# refer to the Products API project for an example of how a detail function is set up
+# remember to also add a URL route for this view function
+#TODO: Test in Postman
 
 # Create your views here.
