@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
-
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import TankManager from "../../components/TankManager/TankManager.jsx";
 
 const TankManagerPage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -39,14 +39,14 @@ const TankManagerPage = () => {
   return (
     <div>
         <h1> Tank Manager (☞ﾟヮﾟ)☞ {tankManager.tankName}</h1>  
-        <h2> Water Type:    ☞{tankManager.waterType}</h2>
-        <h2> Fish Type:     ☞{tankManager.fishType}</h2>
-        <h2> Fish Amount:   ☞{tankManager.fishAmount}</h2>
-        <h2> Plant Type:    ☞{tankManager.plantType}</h2>
-        <h2> Plant Amount:  ☞{tankManager.plantAmount}</h2>
-
-
-    <Outlet /> 
+        <h2> Water Type:___☞{' '}{tankManager.waterType}</h2>
+        <h2> Fish Type:____☞{' '}{tankManager.fishType}</h2>
+        <h2> Fish Amount:__☞{' '}{tankManager.fishAmount}</h2>
+        <h2> Plant Type:___☞{' '}{tankManager.plantType}</h2>
+        <h2> Plant Amount:_☞{' '}{tankManager.plantAmount}</h2>
+        <Routes>
+          <Route path="/" element={<TankManager />} />
+        </Routes>
     </div>
   );
 };
