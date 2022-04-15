@@ -9,23 +9,21 @@ const TankManagerPage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth(); 
-  const [tankManager, setTankManager] = useState([]);
+  const [tankManager, setTankManager] = useState({});
+  const { tankId } = useParams();
+  console.log(tankManager)
   console.log(user); // { username: 'admin', firstName: 'Admin', id: 1 }
   console.log(token); // This is the JWT token that you will send in the header of any request requiring authentication
 
 
   useEffect(() => {
     const fetchManager = async (tank) => {
-
-      try {
-      const mxManagerId = () => {
-        const { id } = useParams();
-      }
       
+
+      try {      
         //TODO: use new tank_detail endpoint here
-       
-        
-        let response = await axios.get(`http://127.0.0.1:8000/api/tank/${tank.id}/`, { 
+
+        let response = await axios.get(`http://127.0.0.1:8000/api/tank/${tankId}/`, { 
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -37,22 +35,18 @@ const TankManagerPage = () => {
       }
     };
     fetchManager();
-  }, [token]);
+  }, [tankId, token]);
   return (
-    <div className="container">
-      <h1>Tank Manager (☞ﾟヮﾟ)☞ {user.username}</h1>  
-      <ul>
-        {tankManager && tankManager.map((manager) => (
-          <li key={manager.id}>
-            <Link to={`/mxManagerId/${tankManager.mxManagerId}`}>
-              {manager.mxManagerId}
-            </Link>
-          </li>
-        ))}
-      </ul> 
-      {/** This JSX will render the MxManager details*/} 
+    <div>
+        <h1> Tank Manager (☞ﾟヮﾟ)☞ {tankManager.tankName}</h1>  
+        <h2> Water Type:    ☞{tankManager.waterType}</h2>
+        <h2> Fish Type:     ☞{tankManager.fishType}</h2>
+        <h2> Fish Amount:   ☞{tankManager.fishAmount}</h2>
+        <h2> Plant Type:    ☞{tankManager.plantType}</h2>
+        <h2> Plant Amount:  ☞{tankManager.plantAmount}</h2>
 
-    <Outlet />
+
+    <Outlet /> 
     </div>
   );
 };
