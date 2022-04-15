@@ -30,6 +30,7 @@ function App() {
         </Route>
         <Route path="/tank/:tankId/" element={<TankManagerPage />} />.
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/add-tank" element={<AddTankPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
