@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import TankManager from "../../components/TankManager/TankManager";
@@ -46,7 +46,8 @@ const TankManagerPage = () => {
         <h2> Fish Amount:__☞{' '}{tankManager.fishAmount}</h2>
         <h2> Plant Type:___☞{' '}{tankManager.plantType}</h2>
         <h2> Plant Amount:_☞{' '}{tankManager.plantAmount}</h2>
-        {/* <TankManager /> */}
+
+        <TankManager />
     </div>
   );
 };

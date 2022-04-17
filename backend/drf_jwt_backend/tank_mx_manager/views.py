@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from .models import MxManager
 from .serializers import MxManagerSerializer
+from django.shortcuts import get_object_or_404
 
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
@@ -33,4 +34,18 @@ def user_mx_manager(request):
         serializer = MxManagerSerializer(mxManager, many=True)
         return Response(serializer.data)
 
-# Create your views here.
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def mx_manager_detail(request, pk):
+    mxManager = get_object_or_404(mxManager, pk=pk)
+    if request.method == 'GET':
+        serializer = MxManager(mxManager)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = MxManager(mxManager, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+    elif request.method == 'DELETE':
+        mxManager.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
