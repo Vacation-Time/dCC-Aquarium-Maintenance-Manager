@@ -1,7 +1,7 @@
     import React, {useEffect, useState} from 'react';
     
     function App() {
-        const [tankManager, setTankManager] = useState();
+        const [tankManager, setTankManager] = useState([]);
         const [foodSchedule, setFoodSchedule] = useState();
         const [waterTempCheck, setWaterTempCheck] = useState();
         const [waterChange, setWaterChange] = useState();
@@ -64,11 +64,9 @@
             <table border="1" style={{ float: 'left' }}>
                 <tbody>
                     <tr>
-                        <td>mxManagerId</td>
-                        <td>Food Schedule</td>
-                        <td>Water Temp Check</td>
-                        <td>Water Change</td>
-                        <td>Plant Care</td>
+                        <td>Task</td>
+                        <td>Status</td>
+                        <td>Next Due Date/Time</td>
                         <td>Notes</td>
                     </tr>
                     {
@@ -92,7 +90,7 @@
                 <input type="text" value={waterChange} onChange={(e)=>{setWaterChange(e.target.value)}} /><br></br>
                 <input type="text" value={plantCare} onChange={(e)=>{setPlantCare(e.target.value)}} /><br></br>
                 <input type="text" value={scheduleNotes} onChange={(e)=>{setScheduleNotes(e.target.value)}} /><br></br>
-                <button onClick={updateTankManager}>Update</button>
+                <button onClick={updateTankManager}>Update Info</button>
             </div>
 
         </div>
