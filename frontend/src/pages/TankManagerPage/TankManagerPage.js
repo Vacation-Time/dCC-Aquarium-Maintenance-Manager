@@ -47,7 +47,7 @@ const TankManagerPage = () => {
         <h2> Plant Type:___☞{' '}{tankManager.plantType}</h2>
         <h2> Plant Amount:_☞{' '}{tankManager.plantAmount}</h2>
 
-        <TankManager />
+        {/* <TankManager /> */}
     </div>
   );
 };
