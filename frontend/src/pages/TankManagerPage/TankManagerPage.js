@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
-import TankManager from "../../components/TankManager/TankManager";
+
 
 
 
@@ -38,6 +38,8 @@ const TankManagerPage = () => {
     };
     fetchManager();
   }, [tankId, token]);
+
+
   return (
     <div>
         <h1> Tank Manager (☞ﾟヮﾟ)☞ {tankManager.tankName}</h1>  
@@ -46,8 +48,7 @@ const TankManagerPage = () => {
         <h2> Fish Amount:__☞{' '}{tankManager.fishAmount}</h2>
         <h2> Plant Type:___☞{' '}{tankManager.plantType}</h2>
         <h2> Plant Amount:_☞{' '}{tankManager.plantAmount}</h2>
-
-        {/* <TankManager /> */}
+        <a href="https://ashishd751.github.io/excel-renderer-demo/">Tank Manager</a>
     </div>
   );
 };

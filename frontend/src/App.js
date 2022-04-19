@@ -21,10 +21,12 @@ function App() {
   return (
     <div>
       <Navbar />
+      
       <Routes>
         <Route path="/" element={<PrivateRoute>
           <HomePage />
         </PrivateRoute>}>
+          
         
           {/** Need a Route here that directs to the TankManagerPage with the selected tank id as a param */}
         </Route>
@@ -32,7 +34,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/add-tank" element={<AddTankPage />} />
         <Route path="/login" element={<LoginPage />} />
+        
       </Routes>
+      <img src="/images/corner-tank.jpg" alt="" />
       <Footer />
       <Outlet/>
     </div>
