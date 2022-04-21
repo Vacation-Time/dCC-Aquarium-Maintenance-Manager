@@ -10,17 +10,19 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('tank', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Car',
+            name='Fish',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('make', models.CharField(max_length=30)),
-                ('model', models.CharField(max_length=100)),
-                ('year', models.IntegerField()),
+                ('fishType', models.CharField(max_length=30)),
+                ('fishAmount', models.CharField(max_length=30)),
+                ('notes', models.CharField(max_length=200)),
+                ('tankId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='tank.tank')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

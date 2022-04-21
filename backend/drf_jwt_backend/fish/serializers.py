@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import Fish
-
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 

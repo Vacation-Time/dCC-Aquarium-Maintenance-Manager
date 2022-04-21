@@ -21,5 +21,6 @@ urlpatterns = [
     path('api/auth/', include('authentication.urls')),
     path('api/cars/', include('cars.urls')),
     path('api/tank/', include('tank.urls')),
-    path('api/mxmanager/', include('tank_mx_manager.urls')),
+    # path('api/fish/', include('fish.urls')),
+
 ]

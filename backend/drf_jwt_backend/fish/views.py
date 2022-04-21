@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 
-from drf_jwt_backend import fish
+
 from .models import Fish
 from .serializers import FishSerializer
 from django.shortcuts import get_object_or_404
@@ -41,7 +41,7 @@ def user_fish(request):
 def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
     if request.method == 'GET':
-        serializer = FishSerializer(tank)
+        serializer = FishSerializer(fish)
         return Response(serializer.data)
     elif request.method == 'PUT':
         serializer = FishSerializer(fish, data=request.data)
@@ -52,11 +52,5 @@ def fish_detail(request, pk):
         fish.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-# TODO: write a view function "tank_details"
-# this will take a primary key for the tank and get that specific tank
-# refer to the Products API project for an example of how a detail function is set up
-# remember to also add a URL route for this view function
-#TODO: Test in Postman
 
 # Create your views here.
