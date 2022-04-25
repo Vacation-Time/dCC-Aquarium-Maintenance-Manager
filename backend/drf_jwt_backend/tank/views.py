@@ -18,6 +18,17 @@ def get_all_tanks(request):
     return Response(serializer.data)
 
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def tanks_by_user(request):
+    print(
+        'User ', f"{request.user.id} {request.user.username}")
+    print(request.user)
+    tank = Tank.objects.filter(user=request.user)
+    serializer = TankSerializer(tank, many=True)
+    return Response(serializer.data)
+
+
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def user_tanks(request):

@@ -9,10 +9,17 @@ let initialValues = {
     tankName: "",
     waterType: "",
     tankSize: "",
-    fishType: "",
-    fishAmount: "",
-    plantType: "",
-    plantAmount: "",
+    waterTempChkLastDone: "",
+    value: "",
+    nextDue: "",
+    waterChangeLastDone: "",
+    amountPercent: "",
+    waterLevelsChkLastDone: "",
+    phLevel: "",
+    nitriteLevel: "",
+    nitrateLevel: "",
+    o2Level: "",
+    notes: "",
 };
 
 const AddTankPage = () => {
@@ -21,6 +28,7 @@ const AddTankPage = () => {
     const [ formData, handleInputChange, handleSubmit ] = useCustomForm(initialValues, postNewTank);
 
     async function postNewTank() {
+      console.log('formData', formData);
         try {
             let response = await axios.post("http://127.0.0.1:8000/api/tank/", formData, {
                 headers: {
@@ -28,6 +36,7 @@ const AddTankPage = () => {
                 }
             })
             navigate("/");
+            console.log(response);
         } catch (error) {
             console.log(error.message);
         }
@@ -65,42 +74,141 @@ const AddTankPage = () => {
               />
             </label>            
             <label>
-              Fish Type:{" "}
+              Water Temp Check Last Done:{" "}
               <input
                 type="text"
-                name="fishType"
-                value={formData.fishType}
+                name="waterTempChkLastDone"
+                value={formData.waterTempChkLastDone}
                 onChange={handleInputChange}
               />
             </label>
             <label>
-              Fish Amount:{" "}
+              Value:{" "}
               <input
                 type="text"
-                name="fishAmount"
-                value={formData.fishAmount}
+                name="value"
+                value={formData.value}
                 onChange={handleInputChange}
               />
             </label>
             <label>
-              Plant Type:{" "}
+              Next Due:{" "}
               <input
                 type="text"
-                name="plantType"
-                value={formData.plantType}
+                name="nextDue"
+                value={formData.nextDue}
                 onChange={handleInputChange}
               />
             </label>
             <label>
-              Plant Amount:{" "}
+              Water Change Last Done:{" "}
               <input
                 type="text"
-                name="plantAmount"
-                value={formData.plantAmount}
+                name="waterTempChkLastDone"
+                value={formData.waterTempChkLastDone}
                 onChange={handleInputChange}
               />
             </label>
-            <button>Add Tank ⌐■_■</button>
+            <label>
+              Amount Percent:{" "}
+              <input
+                type="text"
+                name="value"
+                value={formData.value}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Next Due:{" "}
+              <input
+                type="text"
+                name="nextDue"
+                value={formData.nextDue}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Plant Care Last Done:{" "}
+              <input
+                type="text"
+                name="plantCareLastDone"
+                value={formData.plantCareLastDone}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Next Due:{" "}
+              <input
+                type="text"
+                name="nextDue"
+                value={formData.nextDue}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Water leves Check Last Done:{" "}
+              <input
+                type="text"
+                name="waterLevelsChkLastDone"
+                value={formData.waterLevelsChkLastDone}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              PH Level:{" "}
+              <input
+                type="text"
+                name="phLevel"
+                value={formData.phLevel}
+                onChange={handleInputChange}
+              />
+            </label>            
+            <label>
+              Nitrite Level:{" "}
+              <input
+                type="text"
+                name="nitriteLevel"
+                value={formData.nitriteLevel}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Nitrate Level:{" "}
+              <input
+                type="text"
+                name="nitrateLevel"
+                value={formData.nitrateLevel}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              O2 Level:{" "}
+              <input
+                type="text"
+                name="O2Level"
+                value={formData.o2Level}
+                onChange={handleInputChange}
+              />
+            </label> 
+            <label>
+              Next Due:{" "}
+              <input
+                type="text"
+                name="nextDue"
+                value={formData.nextDue}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Notes:{" "}
+              <input
+                type="text"
+                name="notes"
+                value={formData.notes}
+                onChange={handleInputChange}
+              />
+            </label>
+            <button onClick={postNewTank}>Add Tank ⌐■_■</button> 
           </form>
         </div>
       );
@@ -108,3 +216,6 @@ const AddTankPage = () => {
 }
 
 export default AddTankPage;
+
+//create input data as null for each input-figure that out-update form to appen data to each 
+// create for with null for blank things not required

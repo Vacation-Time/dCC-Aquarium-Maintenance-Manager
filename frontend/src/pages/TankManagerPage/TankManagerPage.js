@@ -39,16 +39,28 @@ const TankManagerPage = () => {
     fetchManager();
   }, [tankId, token]);
 
+  
 
   return (
     <div>
-        <h1> Tank Manager (☞ﾟヮﾟ)☞ {tankManager.tankName}</h1>  
-        <h2> Water Type:___☞{' '}{tankManager.waterType}</h2>
-        <h2> Fish Type:____☞{' '}{tankManager.fishType}</h2>
-        <h2> Fish Amount:__☞{' '}{tankManager.fishAmount}</h2>
-        <h2> Plant Type:___☞{' '}{tankManager.plantType}</h2>
-        <h2> Plant Amount:_☞{' '}{tankManager.plantAmount}</h2>
-        <a href="https://ashishd751.github.io/excel-renderer-demo/">Tank Manager</a>
+        <h1> Tank Manager For (☞ﾟヮﾟ)☞ {tankManager.tankName}</h1>  
+        <h2> Water Type:{' '}{tankManager.waterType}</h2>
+        <h2> Tank Size:{' '}{tankManager.tankSize}</h2>
+        <h2> Water Temp Check Last Done:{' '}{tankManager.waterTempChkLastDone}</h2>
+        <h2> Value:{' '}{tankManager.value}</h2>
+        <h2> Next Due:{' '}{tankManager.nextDue}</h2>  
+        <h2> Water Change last Done:{' '}{tankManager.waterChangeLastDone}</h2>
+        <h2> Amount Percent:{' '}{tankManager.amountPercent}</h2>
+        <h2> Next Due:{' '}{tankManager.nextDue}</h2>
+        <h2> Plan Care Last Done:{' '}{tankManager.plantCareLastDone}</h2>
+        <h2> Next Due:{' '}{tankManager.nextDue}</h2>
+        <h2> Water Levels Check Last Done:{' '}{tankManager.waterLevelsChkLastDone}</h2>
+        <h2> PH Level:{' '}{tankManager.phLevel}</h2>
+        <h2> Nitrite Level:{' '}{tankManager.nitriteLevel}</h2>
+        <h2> Nitrate Level:{' '}{tankManager.nitrateLevel}</h2>  
+        <h2> O2 Level:{' '}{tankManager.o2Level}</h2>
+        <h2> Next Due:{' '}{tankManager.nextDue}</h2>
+        <h2> Notes:{' '}{tankManager.notes}</h2>
     </div>
   );
 };

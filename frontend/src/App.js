@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddTankPage from "./pages/AddTankPage/AddTankPage";
 import TankManagerPage from "./pages/TankManagerPage/TankManagerPage";
+import AddFishPage from './pages/AddFishPage/AddFish';
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -18,6 +19,8 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
+
+  
   return (
     <div>
       <Navbar />
@@ -33,6 +36,7 @@ function App() {
         <Route path="/tank/:tankId/" element={<TankManagerPage />} />.
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/add-tank" element={<AddTankPage />} />
+        <Route path="/add-fish" element={<AddFishPage />} />
         <Route path="/login" element={<LoginPage />} />
         
       </Routes>
