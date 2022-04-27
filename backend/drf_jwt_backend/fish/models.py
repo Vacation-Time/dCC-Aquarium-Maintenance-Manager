@@ -5,7 +5,7 @@ from tank.models import Tank
 
 class Fish(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    tankName = models.ForeignKey(Tank, on_delete=models.CASCADE)
-    fishType = models.CharField(max_length=30)
-    fishAmount = models.CharField(max_length=30)
-    notes = models.CharField(max_length=200)
+    tank_name = models.ForeignKey(Tank, on_delete=models.CASCADE)
+    fish_type = models.CharField(max_length=30)
+    fish_amount = models.CharField(max_length=30)
+    fish_notes = models.CharField(max_length=200)

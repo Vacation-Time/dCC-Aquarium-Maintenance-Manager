@@ -10,6 +10,8 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import AddTankPage from "./pages/AddTankPage/AddTankPage";
 import TankManagerPage from "./pages/TankManagerPage/TankManagerPage";
 import AddFishPage from './pages/AddFishPage/AddFish';
+import UpdateFishPage from '../src/pages/UpdateFish/UpdateFish';
+import UpdateTankPage from '../src/pages/UpdateTank/UpdateTank';
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -37,6 +39,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/add-tank" element={<AddTankPage />} />
         <Route path="/add-fish" element={<AddFishPage />} />
+        <Route path="/update-tank" element={<UpdateTankPage />} />
+        <Route path="/update-fish" element={<UpdateFishPage />} />
         <Route path="/login" element={<LoginPage />} />
         
       </Routes>

@@ -6,21 +6,21 @@ import axios from "axios";
 import useCustomForm from "../../hooks/useCustomForm";
 
 let initialValues = {
-    tankName: "",
-    fishType: "",
-    fishAmount: "",
-    fishNotes: "",
+  tankName: "",
+  fishType: "",
+  fishAmount: "",
+  fishNotes: "",
 };
 
-const AddFishPage = () => {
+const UpdateFishPage = () => {
     const [user, token] = useAuth();
     const navigate = useNavigate();
-    const [ formData, handleInputChange, handleSubmit ] = useCustomForm(initialValues, postNewFish);
+    const [ formData, handleInputChange, handleSubmit ] = useCustomForm(initialValues, putUpdateFish);
 
-    async function postNewFish() {
+    async function putUpdateFish() {
       console.log('formData', formData);
         try {
-            let response = await axios.post("http://127.0.0.1:8000/api/fish/", formData, {
+            let response = await axios.put("http://127.0.0.1:8000/api/fish/", formData, {
                 headers: {
                     Authorization: "Bearer " + token,
                 }
@@ -36,7 +36,7 @@ const AddFishPage = () => {
         <div className="container">
           <h2>{user.username}</h2>
           <form className="form" onSubmit={handleSubmit}>
-            <label>
+          <label>
               Tank Name:{" "}
               <input
                 type="text"
@@ -72,14 +72,14 @@ const AddFishPage = () => {
                 onChange={handleInputChange}
               />
             </label>
-            <button onClick={postNewFish}>Add Fish ⌐■_■</button> 
+            <button onClick={putUpdateFish}>Add Fish ⌐■_■</button> 
           </form>
         </div>
       );
 
 }
 
-export default AddFishPage;
+export default UpdateFishPage;
 
 //create input data as null for each input-figure that out-update form to appen data to each 
 // create for with null for blank things not required

@@ -6,5 +6,5 @@ from .models import Fish
 class FishSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fish
-        fields = ['id', 'tankName', 'fishType', 'fishAmount', 'notes']
+        fields = ['id', 'tank_name', 'fish_type', 'fish_amount', 'fish_notes']
         depth = 1

@@ -11,15 +11,19 @@ let initialValues = {
     tankSize: "",
     waterTempChkLastDone: "",
     value: "",
-    nextDue: "",
+    nextTempChkDue: "",
     waterChangeLastDone: "",
     amountPercent: "",
+    nextWaterChangeDue: "",
+    plantCareLastDone: "",
+    nextPlantChkDue: "",
     waterLevelsChkLastDone: "",
     phLevel: "",
     nitriteLevel: "",
     nitrateLevel: "",
     o2Level: "",
-    notes: "",
+    nextLevelsChkDue: "",
+    tankNotes: "",
 };
 
 const AddTankPage = () => {
@@ -92,11 +96,11 @@ const AddTankPage = () => {
               />
             </label>
             <label>
-              Next Due:{" "}
+              Next Temp Chk Due:{" "}
               <input
                 type="text"
-                name="nextDue"
-                value={formData.nextDue}
+                name="nextTempChkDue"
+                value={formData.nextTempChkDue}
                 onChange={handleInputChange}
               />
             </label>
@@ -104,8 +108,8 @@ const AddTankPage = () => {
               Water Change Last Done:{" "}
               <input
                 type="text"
-                name="waterTempChkLastDone"
-                value={formData.waterTempChkLastDone}
+                name="waterChangeLastDone"
+                value={formData.waterChangeLastDone}
                 onChange={handleInputChange}
               />
             </label>
@@ -113,17 +117,17 @@ const AddTankPage = () => {
               Amount Percent:{" "}
               <input
                 type="text"
-                name="value"
-                value={formData.value}
+                name="amountPercent"
+                value={formData.amountPercent}
                 onChange={handleInputChange}
               />
             </label>
             <label>
-              Next Due:{" "}
+              Next Water Change Due:{" "}
               <input
                 type="text"
-                name="nextDue"
-                value={formData.nextDue}
+                name="nextWaterChangeDue"
+                value={formData.nextWaterChangeDue}
                 onChange={handleInputChange}
               />
             </label>
@@ -137,16 +141,16 @@ const AddTankPage = () => {
               />
             </label>
             <label>
-              Next Due:{" "}
+              Next Plant Chk Due:{" "}
               <input
                 type="text"
-                name="nextDue"
-                value={formData.nextDue}
+                name="nextPlantChkDue"
+                value={formData.nextPlantChkDue}
                 onChange={handleInputChange}
               />
             </label>
             <label>
-              Water leves Check Last Done:{" "}
+              Water Levels Check Last Done:{" "}
               <input
                 type="text"
                 name="waterLevelsChkLastDone"
@@ -185,26 +189,26 @@ const AddTankPage = () => {
               O2 Level:{" "}
               <input
                 type="text"
-                name="O2Level"
+                name="o2Level"
                 value={formData.o2Level}
                 onChange={handleInputChange}
               />
             </label> 
             <label>
-              Next Due:{" "}
+              Next Levels Chk Due:{" "}
               <input
                 type="text"
-                name="nextDue"
-                value={formData.nextDue}
+                name="nextLevelsChkDue"
+                value={formData.nextLevelsChkDue}
                 onChange={handleInputChange}
               />
             </label>
             <label>
-              Notes:{" "}
+              Tank Notes:{" "}
               <input
                 type="text"
-                name="notes"
-                value={formData.notes}
+                name="tankNotes"
+                value={formData.tankNotes}
                 onChange={handleInputChange}
               />
             </label>
