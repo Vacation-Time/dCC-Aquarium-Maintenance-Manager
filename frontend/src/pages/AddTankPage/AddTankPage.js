@@ -33,6 +33,7 @@ const AddTankPage = () => {
 
     async function postNewTank() {
       console.log('formData', formData);
+    
         try {
             let response = await axios.post("http://127.0.0.1:8000/api/tank/", formData, {
                 headers: {
@@ -54,7 +55,7 @@ const AddTankPage = () => {
               Tank Name:{" "}
               <input
                 type="text"
-                name="tankName"
+                name="tank_name"
                 value={formData.tankName}
                 onChange={handleInputChange}
               />
@@ -63,7 +64,7 @@ const AddTankPage = () => {
               Water Type:{" "}
               <input
                 type="text"
-                name="waterType"
+                name="water_type"
                 value={formData.waterType}
                 onChange={handleInputChange}
               />
@@ -72,7 +73,7 @@ const AddTankPage = () => {
               Tank Size:{" "}
               <input
                 type="text"
-                name="tankSize"
+                name="tank_size"
                 value={formData.tankSize}
                 onChange={handleInputChange}
               />
@@ -81,7 +82,7 @@ const AddTankPage = () => {
               Water Temp Check Last Done:{" "}
               <input
                 type="text"
-                name="waterTempChkLastDone"
+                name="water_temp_chk_last_done"
                 value={formData.waterTempChkLastDone}
                 onChange={handleInputChange}
               />
@@ -99,7 +100,7 @@ const AddTankPage = () => {
               Next Temp Chk Due:{" "}
               <input
                 type="text"
-                name="nextTempChkDue"
+                name="next_temp_chk_due"
                 value={formData.nextTempChkDue}
                 onChange={handleInputChange}
               />
@@ -108,7 +109,7 @@ const AddTankPage = () => {
               Water Change Last Done:{" "}
               <input
                 type="text"
-                name="waterChangeLastDone"
+                name="water_change_last_done"
                 value={formData.waterChangeLastDone}
                 onChange={handleInputChange}
               />
@@ -117,7 +118,7 @@ const AddTankPage = () => {
               Amount Percent:{" "}
               <input
                 type="text"
-                name="amountPercent"
+                name="amount_percent"
                 value={formData.amountPercent}
                 onChange={handleInputChange}
               />
@@ -126,7 +127,7 @@ const AddTankPage = () => {
               Next Water Change Due:{" "}
               <input
                 type="text"
-                name="nextWaterChangeDue"
+                name="next_water_change_due"
                 value={formData.nextWaterChangeDue}
                 onChange={handleInputChange}
               />
@@ -135,7 +136,7 @@ const AddTankPage = () => {
               Plant Care Last Done:{" "}
               <input
                 type="text"
-                name="plantCareLastDone"
+                name="plant_care_last_done"
                 value={formData.plantCareLastDone}
                 onChange={handleInputChange}
               />
@@ -144,7 +145,7 @@ const AddTankPage = () => {
               Next Plant Chk Due:{" "}
               <input
                 type="text"
-                name="nextPlantChkDue"
+                name="next_plant_chk_due"
                 value={formData.nextPlantChkDue}
                 onChange={handleInputChange}
               />
@@ -153,7 +154,7 @@ const AddTankPage = () => {
               Water Levels Check Last Done:{" "}
               <input
                 type="text"
-                name="waterLevelsChkLastDone"
+                name="water_levels_chk_last_done"
                 value={formData.waterLevelsChkLastDone}
                 onChange={handleInputChange}
               />
@@ -162,7 +163,7 @@ const AddTankPage = () => {
               PH Level:{" "}
               <input
                 type="text"
-                name="phLevel"
+                name="ph_level"
                 value={formData.phLevel}
                 onChange={handleInputChange}
               />
@@ -171,7 +172,7 @@ const AddTankPage = () => {
               Nitrite Level:{" "}
               <input
                 type="text"
-                name="nitriteLevel"
+                name="nitrite_level"
                 value={formData.nitriteLevel}
                 onChange={handleInputChange}
               />
@@ -180,7 +181,7 @@ const AddTankPage = () => {
               Nitrate Level:{" "}
               <input
                 type="text"
-                name="nitrateLevel"
+                name="nitrate_level"
                 value={formData.nitrateLevel}
                 onChange={handleInputChange}
               />
@@ -189,7 +190,7 @@ const AddTankPage = () => {
               O2 Level:{" "}
               <input
                 type="text"
-                name="o2Level"
+                name="o2_level"
                 value={formData.o2Level}
                 onChange={handleInputChange}
               />
@@ -198,7 +199,7 @@ const AddTankPage = () => {
               Next Levels Chk Due:{" "}
               <input
                 type="text"
-                name="nextLevelsChkDue"
+                name="next_levels_chk_due"
                 value={formData.nextLevelsChkDue}
                 onChange={handleInputChange}
               />
@@ -207,7 +208,7 @@ const AddTankPage = () => {
               Tank Notes:{" "}
               <input
                 type="text"
-                name="tankNotes"
+                name="tank_notes"
                 value={formData.tankNotes}
                 onChange={handleInputChange}
               />

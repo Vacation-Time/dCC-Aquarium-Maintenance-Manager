@@ -40,7 +40,7 @@ const UpdateFishPage = () => {
               Tank Name:{" "}
               <input
                 type="text"
-                name="tankName"
+                name="tank_name"
                 value={formData.tankName}
                 onChange={handleInputChange}
               />
@@ -49,7 +49,7 @@ const UpdateFishPage = () => {
               Fish Type:{" "}
               <input
                 type="text"
-                name="fishType"
+                name="fish_type"
                 value={formData.fishType}
                 onChange={handleInputChange}
               />
@@ -58,7 +58,7 @@ const UpdateFishPage = () => {
               Fish Amount:{" "}
               <input
                 type="text"
-                name="fishAmount"
+                name="fish_amount"
                 value={formData.fishAmount}
                 onChange={handleInputChange}
               />
@@ -67,7 +67,7 @@ const UpdateFishPage = () => {
               Fish Notes:{" "}
               <input
                 type="text"
-                name="fishNotes"
+                name="fish_notes"
                 value={formData.fishNotes}
                 onChange={handleInputChange}
               />
