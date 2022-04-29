@@ -29,6 +29,8 @@ const HomePage = () => {
     };
     fetchTank();
   }, [token]);
+
+
   return (
     <div className="container">
       <h1>Home Page for (☞ﾟヮﾟ)☞ {user.username}</h1>
@@ -38,9 +40,10 @@ const HomePage = () => {
         tank.map((tank) => (
           <p key={tank.id}><Link to={`/tank/${tank.id}/`}>{tank.tankName}</Link></p> // figure out where this goes and add manager on that page, might break if new tank is added
         ))}
-        <Link to={`/add-tank`}>*Add a Tank*</Link>
+        <Link to={`/add-tank`}>Add a Tank</Link>
     </div>
   );
 };
 
 export default HomePage;
+

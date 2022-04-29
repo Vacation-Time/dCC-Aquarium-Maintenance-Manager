@@ -60,7 +60,7 @@ const TankManagerPage = () => {
         <h2> Nitrate Level:{' '}{tankManager.nitrateLevel}</h2>  
         <h2> O2 Level:{' '}{tankManager.o2Level}</h2>
         <h2> Next Due:{' '}{tankManager.nextDue}</h2>
-        <h2> Notes:{' '}{tankManager.notes}</h2>
+        <h2> Notes:{' '}{tankManager.tankNotes}</h2>
     </div>
   );
 };
